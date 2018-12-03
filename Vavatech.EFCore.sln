@@ -5,6 +5,10 @@ VisualStudioVersion = 15.0.28307.136
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vavatech.EFCore.ConsoleClient", "Vavatech.EFCore.ConsoleClient\Vavatech.EFCore.ConsoleClient.csproj", "{17F32D81-75B2-42D5-B873-AA97074C9C52}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vavatech.EFCore.Models", "Vavatech.EFCore.Models\Vavatech.EFCore.Models.csproj", "{27866E78-19CA-4857-BA3D-4A3E4716BE8E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vavatech.EFCore.Generator", "Vavatech.EFCore.Generator\Vavatech.EFCore.Generator.csproj", "{A6BE9A24-6ED9-4F9D-B09F-BF4932A84A51}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{17F32D81-75B2-42D5-B873-AA97074C9C52}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{17F32D81-75B2-42D5-B873-AA97074C9C52}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{17F32D81-75B2-42D5-B873-AA97074C9C52}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27866E78-19CA-4857-BA3D-4A3E4716BE8E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27866E78-19CA-4857-BA3D-4A3E4716BE8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27866E78-19CA-4857-BA3D-4A3E4716BE8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27866E78-19CA-4857-BA3D-4A3E4716BE8E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6BE9A24-6ED9-4F9D-B09F-BF4932A84A51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6BE9A24-6ED9-4F9D-B09F-BF4932A84A51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6BE9A24-6ED9-4F9D-B09F-BF4932A84A51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6BE9A24-6ED9-4F9D-B09F-BF4932A84A51}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
