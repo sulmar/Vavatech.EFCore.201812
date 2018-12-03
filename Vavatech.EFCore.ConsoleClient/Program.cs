@@ -5,19 +5,53 @@ namespace Vavatech.EFCore.ConsoleClient
 {
     class Program
     {
+        delegate void Print(string message);
+
+        private static void SendSms(string content)
+        {
+            Console.WriteLine(content);
+        }
+
+        private static void SendEmail(string body)
+        {
+            Console.WriteLine(body);
+        }
+
         static void Main(string[] args)
         {
 
-            var customers = SeedData.GetCustomers(100);
+            Console.WriteLine("Hello World");
 
-            Display(customers);
 
-            MyContext context = new MyContext();
-            context.Database.EnsureDeleted();
-            context.Database.EnsureCreated();
+            Print print;
 
-            context.Customers.AddRange(customers);
-            context.SaveChanges();
+            print = SendSms;
+            print += SendEmail;
+            print += delegate (string input)
+            {
+                Console.WriteLine(input);
+            };
+
+            print += input => Console.WriteLine(input);
+
+            print("Hello .NET Core");
+
+
+
+            
+
+            //var customers = SeedData.GetCustomers(100);
+
+            //Display(customers);
+
+            //MyContext context = new MyContext();
+            //context.Database.EnsureDeleted();
+            //context.Database.EnsureCreated();
+
+            //context.Customers.AddRange(customers);
+            //context.SaveChanges();
+
+            Querying.Test();
 
 
             Console.WriteLine("Press any key to exit.");
