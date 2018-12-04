@@ -12,7 +12,7 @@ namespace Vavatech.EFCore.ConsoleClient
         {
             AnyTest();
 
-            ZipTest();
+            // ZipTest();
 
             GroupByTest();
 

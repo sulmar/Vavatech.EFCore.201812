@@ -11,5 +11,14 @@ namespace Vavatech.EFCore.Models
         public Customer Customer { get; set; }
         public DateTime OrderDate { get; set; }
         public DateTime? DeliveryDate { get; set; }
+        public IList<OrderDetail> Details { get; set; }
+
+
+        public Order()
+        {
+            Details = new List<OrderDetail>();
+
+            OrderDate = DateTime.Now;
+        }
     }
 }

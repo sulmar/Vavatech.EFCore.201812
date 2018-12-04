@@ -1,0 +1,13 @@
+﻿@model IEnumerable<Vavatech.EFCore.Models.Product>
+
+@{
+    ViewData["Title"] = "ProductsView";
+}
+
+<h2>Products</h2>
+
+    @foreach(var product in Model)
+    {
+        <h3>@product.Name</h3>
+    }
+

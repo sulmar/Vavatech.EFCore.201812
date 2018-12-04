@@ -36,22 +36,22 @@ namespace Vavatech.EFCore.ConsoleClient
 
             print("Hello .NET Core");
 
-
-
-            
-
-            //var customers = SeedData.GetCustomers(100);
-
             //Display(customers);
 
             //MyContext context = new MyContext();
             //context.Database.EnsureDeleted();
             //context.Database.EnsureCreated();
 
-            //context.Customers.AddRange(customers);
+            //context.Customers.AddRange(SeedData.GetCustomers(100));
+            //context.Products.AddRange(SeedData.GetProducts(50));
             //context.SaveChanges();
 
+
+
             Querying.Test();
+
+            Saving.Test();
+
 
 
             Console.WriteLine("Press any key to exit.");

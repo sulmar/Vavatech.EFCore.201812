@@ -1,0 +1,15 @@
+﻿@model Vavatech.EFCore.Models.Product
+
+@{
+    ViewData["Title"] = "Add";
+}
+
+<h2>Add</h2>
+
+<form method="post">
+    <input name="name" type="text" value="@Model.Name" />
+    <input name="color" type="text" value="@Model.Color" />
+    <input name="unitprice" type="text" value="@Model.UnitPrice" />
+
+    <button type="submit" >Save</button> 
+</form>
