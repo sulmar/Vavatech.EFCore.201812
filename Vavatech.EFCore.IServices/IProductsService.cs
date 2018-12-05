@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using Vavatech.EFCore.Models;
 
 namespace Vavatech.EFCore.IServices
@@ -11,6 +12,9 @@ namespace Vavatech.EFCore.IServices
         void Add(Product product);
         void Update(Product product);
         void Delete(int id);
+
+        Task<IList<Product>> GetAsync();
+        Task AddAsync(Product product);
 
     }
 }

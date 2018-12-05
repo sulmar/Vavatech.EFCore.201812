@@ -8,6 +8,10 @@ using Vavatech.EFCore.Models;
 namespace Vavatech.EFCore.DbServices
 {
     // PM> Install-Package Microsoft.EntityFrameworkCore
+
+    // Migracje
+    // PM> Install-Package Microsoft.EntityFrameworkCore.Tools.DotNet
+
     public class ShopContext : DbContext
     {
         public DbSet<Order> Orders { get; set; }

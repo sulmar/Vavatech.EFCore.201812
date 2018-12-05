@@ -16,12 +16,20 @@ namespace Vavatech.EFCore.ConsoleClient.Configurations
 
             builder
                 .Property(p => p.FirstName)
+                // .IsConcurrencyToken()   // token współbieżności
                 .HasMaxLength(50);
 
             builder
                 .Property(p => p.LastName)
+                // .IsConcurrencyToken()
                 .HasMaxLength(50)
                 .IsRequired();
+
+
+            builder
+                .Property(p => p.RowVersion)
+                .IsRowVersion()
+                .IsConcurrencyToken();
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using Vavatech.EFCore.Generator;
 
 namespace Vavatech.EFCore.ConsoleClient
@@ -22,31 +23,26 @@ namespace Vavatech.EFCore.ConsoleClient
 
             Console.WriteLine("Hello World");
 
+           // Tasks.Test();
 
-            Print print;
+            Console.WriteLine("Press any key to exit.");
 
-            print = SendSms;
-            print += SendEmail;
-            print += delegate (string input)
-            {
-                Console.WriteLine(input);
-            };
+            Console.ReadKey();
 
-            print += input => Console.WriteLine(input);
 
-            print("Hello .NET Core");
+            DropAndCreateDatabase();
+
+            Concurrency.Test();
+
+            Transactions.Test();
+
+            RawSqlQueries.Test();
+
+            // DelegatesTest();
 
             //Display(customers);
 
-            //MyContext context = new MyContext();
-            //context.Database.EnsureDeleted();
-            //context.Database.EnsureCreated();
-
-            //context.Customers.AddRange(SeedData.GetCustomers(100));
-            //context.Products.AddRange(SeedData.GetProducts(50));
-            //context.SaveChanges();
-
-
+           
 
             Querying.Test();
 
@@ -58,6 +54,34 @@ namespace Vavatech.EFCore.ConsoleClient
 
             Console.ReadKey();
 
+        }
+
+        private static void DropAndCreateDatabase()
+        {
+            MyContext context = new MyContext();
+           // context.Database.EnsureDeleted();
+            //context.Database.EnsureCreated();
+
+            context.Database.Migrate();
+
+
+            //context.Customers.AddRange(SeedData.GetCustomers(100));
+            //context.Products.AddRange(SeedData.GetProducts(50));
+            //context.SaveChanges();
+        }
+
+        private static void DelegatesTest()
+        {
+            Print print = SendSms;
+            print += SendEmail;
+            print += delegate (string input)
+            {
+                Console.WriteLine(input);
+            };
+
+            print += input => Console.WriteLine(input);
+
+            print("Hello .NET Core");
         }
 
         private static void Display(System.Collections.Generic.IList<Models.Customer> customers)

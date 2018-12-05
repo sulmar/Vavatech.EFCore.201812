@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using Vavatech.EFCore.Generator;
 using Vavatech.EFCore.IServices;
 using Vavatech.EFCore.Models;
@@ -21,6 +22,11 @@ namespace Vavatech.EFCore.FakeServices
             products.Add(product);
         }
 
+        public Task AddAsync(Product product)
+        {
+            return Task.Run(() => Add(product));
+        }
+
         public void Delete(int id)
         {
             products.Remove(Get(id));
@@ -34,6 +40,11 @@ namespace Vavatech.EFCore.FakeServices
         public Product Get(int id)
         {
             return products.SingleOrDefault(p => p.Id == id);
+        }
+
+        public Task<IList<Product>> GetAsync()
+        {
+            return Task.Run(()=> Get());
         }
 
         public void Update(Product product)

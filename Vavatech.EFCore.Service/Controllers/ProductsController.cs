@@ -28,11 +28,20 @@ namespace Vavatech.EFCore.Service.Controllers
             return Ok(products);
         }
 
+        //[Route("~/[controller]")]
+        //[HttpGet]
+        //public ActionResult Index()
+        //{
+        //    var products = productsService.Get();
+
+        //    return View(products);
+        //}
+
         [Route("~/[controller]")]
         [HttpGet]
-        public ActionResult Index()
+        public async Task<ActionResult> Index()
         {
-            var products = productsService.Get();
+            var products = await productsService.GetAsync();
 
             return View(products);
         }
@@ -50,11 +59,20 @@ namespace Vavatech.EFCore.Service.Controllers
 
         }
 
+        //[HttpPost]
+        //[Route("~/[controller]/[action]")]
+        //public ActionResult Add([FromForm] Product product)
+        //{
+        //    productsService.Add(product);
+
+        //    return View(product);
+        //}
+
         [HttpPost]
         [Route("~/[controller]/[action]")]
-        public ActionResult Add([FromForm] Product product)
+        public async Task<ActionResult> Add([FromForm] Product product)
         {
-            productsService.Add(product);
+            await productsService.AddAsync(product);
 
             return View(product);
         }
